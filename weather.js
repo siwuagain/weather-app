@@ -26,6 +26,23 @@ async function getWeatherInfo(location) {
 
   console.log(forecastData)
 
+  function convertUnix(unixTime, timezoneValue) {
+
+    const dateFromUnix = new Date((unixTime + timezoneValue) * 1000)
+    
+    const dateHours = String(dateFromUnix.getHours());
+
+    const dateMinutes = String(dateFromUnix.getMinutes());
+
+    const timeOfRequest = dateHours.padStart(2, '0') + ':' + dateMinutes.padStart(2, '0');
+
+    return timeOfRequest;
+  }
+
+
+  console.log(convertUnix(weatherData.dt, weatherData.timezone))
+
+  
 }
 
-getWeatherInfo('london')
+getWeatherInfo('new york')
