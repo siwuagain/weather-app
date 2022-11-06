@@ -29,10 +29,16 @@ async function getWeatherInfo(location) {
   function convertUnix(unixTime, timezoneValue) {
 
     const dateFromUnix = new Date((unixTime + timezoneValue) * 1000)
-    
-    const dateHours = String(dateFromUnix.getHours());
 
-    const dateMinutes = String(dateFromUnix.getMinutes());
+    //console.log(dateFromUnix)
+    
+    const dateHours = String(dateFromUnix.getUTCHours());
+
+    //console.log(dateHours)
+
+    const dateMinutes = String(dateFromUnix.getUTCMinutes());
+
+    //console.log(dateMinutes)
 
     const timeOfRequest = dateHours.padStart(2, '0') + ':' + dateMinutes.padStart(2, '0');
 
@@ -40,9 +46,47 @@ async function getWeatherInfo(location) {
   }
 
 
-  console.log(convertUnix(weatherData.dt, weatherData.timezone))
+
+  const showTime = document.getElementById('time');
+
+  showTime.textContent = `${convertUnix(weatherData.dt, weatherData.timezone)}`
+
+  const currentWeatherDisplay = document.getElementById('current-weather');
+
+  currentWeatherDisplay.textContent = `${weatherData.weather[0].main}`
+
+  const currentWeatherDescription = weatherData.weather.description;
+
+  const currentTemp = weatherData.main.temp
+  
+  console.log(currentTemp)
+
+  const feelsLikeTemp = weatherData.main.feels_like;
+
+  const currentHumidity = weatherData.main.humidity;
+
+  const windSpeed = weatherData.wind.speed;
+
+  for (let i=0; i < forecastData.list.length; i+=8) {
+    console.log(i)
+    console.log(convertUnix(forecastData.list[i].dt, weatherData.timezone))
+
+    const forecastMainTemp = forecastData.list[i].main.temp;
+
+    console.log(forecastMainTemp)
+
+    const forecastWeather = forecastData.list[i].weather[0].main
+
+    console.log(forecastWeather)
+  }
+
+  
 
   
 }
 
-getWeatherInfo('new york')
+const locationInput = document.getElementById('city');
+
+
+
+getWeatherInfo('london')
