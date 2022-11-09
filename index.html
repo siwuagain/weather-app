@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/currentweather.css">
+  <link rel="stylesheet" href="styles/forecast.css">
+  <link rel="stylesheet" href="styles/input.css">
+  <script src="weather.js" defer></script>
+</head>
+
+<body>
+
+  <div id="display-container">
+
+    <div id="location-input-container">
+        <span id="search">
+          <img id="search-icon" src="images/search.png">
+        </span>
+        <input type="text" id="location-input" placeholder="Enter a location">
+      <h1 id="location-name"></h1>
+    </div>
+    
+    <div id="weather-container">
+
+      <div id="time"></div>
+      
+      <div id="current-weather-container">
+        <div id="current-weather"></div>
+        <img id="current-weather-icon">
+      </div>
+      <div id="current-weather-description"></div>
+      <div id="current-conditions-container">
+        <div id="current-temp" class="other-info"></div>
+        <div id="feels-like" class="other-info"></div>
+        <div id="humidity" class="other-info"></div>
+        <div id="wind-speed" class="other-info"></div>
+      </div>
+    </div>
+
+    
+    <div id="weather-forecast-container">
+      
+      <p id="title-forecast">5-day weather forecast</p>
+
+      <div id="today" class="forecast-days">
+        <div class="forecast-date-info"></div>
+        <img class="forecast-weather-icon">
+        <div class="max-temp"></div>
+        <div class="min-temp"></div>
+      </div>
+
+      <div id="day-2" class="forecast-days">
+        <div class="forecast-date-info"></div>
+        <img class="forecast-weather-icon">
+        <div class="max-temp"></div>
+        <div class="min-temp"></div>
+      </div>
+
+      <div id="day-3" class="forecast-days">
+        <div class="forecast-date-info"></div>
+        <img class="forecast-weather-icon">
+        <div class="max-temp"></div>
+        <div class="min-temp"></div>
+      </div>
+
+      <div id="day-4" class="forecast-days">
+        <div class="forecast-date-info"></div>
+        <img class="forecast-weather-icon">
+        <div class="max-temp"></div>
+        <div class="min-temp"></div>
+      </div>
+
+      <div id="day-5" class="forecast-days">
+        <div class="forecast-date-info"></div>
+        <img class="forecast-weather-icon">
+        <div class="max-temp"></div>
+        <div class="min-temp"></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

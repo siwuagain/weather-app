@@ -1,0 +1,28 @@
+#weather-forecast-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-self: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.forecast-days {
+  border: 1px solid rgb(178, 178, 178);
+  border-radius: 10px;
+  padding: calc(1px + 2vw);
+}
+
+.forecast-date-info {
+  white-space: pre-line;
+}
+
+.forecast-weather-icon {
+  height: 70px;
+  width: 70px;
+}
+#title-forecast {
+  font-size: 2rem;
+  width: 100%;
+  flex: 0 0 100%
+}

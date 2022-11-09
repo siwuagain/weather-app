@@ -1,0 +1,64 @@
+#weather-container {
+  display: grid;
+  column-gap: calc(50px + 10vw);
+  row-gap: calc(5px + 1vh);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px repeat(2, 50px);
+  border: 2px solid black;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 1px 1px 4px inset;
+  background-color: rgb(210, 223, 206);
+}
+
+#current-weather-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#current-conditions-container {
+  grid-row: 1/4;
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+}
+
+#current-weather {
+  font-size: 3rem;
+  text-align: right;
+  text-decoration: underline;
+}
+
+#time {
+  font-size: 3.5rem;
+  text-align: center;
+  align-self: end;
+}
+
+#current-weather-description {
+  align-self: start;
+  text-align: right;
+  font-size: 1.2rem;
+}
+
+.other-info{
+  white-space: pre-line;
+  text-align: right;
+  font-size: 1.5rem;
+}
+
+#current-temp {
+  font-size: 4rem;
+}
+
+#current-weather-icon {
+  width: 50px;
+  height: 50px;
+}
+
+@media (max-width: 600px) {
+  #weather-container {
+    column-gap: 0;
+  }
+}
+
